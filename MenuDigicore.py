@@ -43,9 +43,9 @@ def menu():
 
 # for adding user credentials function
 def add_user():
-        name, password = get_valid_credentials()
+        name, password, url = get_valid_credentials()
         encrypted_pass = cip.encrypted_value(password, shift = 3) # It encrypts the password using a Caesar cipher, shifts each character by 3 positions
-        url = input('Input URL/Resources : ') # Prompts the user to input a URL
+        #url = input('Input URL/Resources : ') # Prompts the user to input a URL
         return name, encrypted_pass, url #Returns the collected information as a tuple containing the name, encrypted_pass, and url
 
 selected_opt = menu()
