@@ -1,7 +1,10 @@
-from colorama import Fore, init
+#colourful output
+from colorama import Fore, Style, init
+init(autoreset=True)
+
+# This module allows you to use patterns to search, match, and manipulate strings based on complex criteria
 import re
 
-init(autoreset=True)
 
 def get_valid_credentials():
     while True:

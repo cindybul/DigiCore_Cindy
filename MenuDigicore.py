@@ -16,7 +16,7 @@ init(autoreset=True)
 # import cipher module for encryption and decryption function
 import cipher as cip               #from cipher import encrypted_value, decrypted_value           ####(another example import option)####
 
-# import validation module for invalid input
+# import get_valid_credentials function from validation module for invalid input
 from validation import get_valid_credentials
 
 
