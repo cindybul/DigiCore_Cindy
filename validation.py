@@ -18,7 +18,7 @@ def get_valid_credentials():
             continue  # Prompt again if invalid
 
         # Get and validate URL
-        url = input('Input URL/Resources :').strip()
+        url = input('Input URL/Resources: ').strip()
         if not (3 <= len(url) <= 20) or not re.match(r'^[a-zA-Z0-9_]+$', url) or url.startswith('_') or url.endswith('_'):
             print(Fore.RED + "Invalid URL It must be 3-20 characters, contain only letters, numbers, or underscores, and cannot start or end with an underscore.")
             continue
