@@ -16,7 +16,7 @@ init(autoreset=True)
 # import cipher module for encryption and decryption function
 import cipher as cip               #from cipher import encrypted_value, decrypted_value           ####(another example import option)####
 
-# import get_valid_credentials function from validation module for invalid input
+# import validation module for invalid input
 from validation import get_valid_credentials
 
 
@@ -70,10 +70,13 @@ while selected_opt != 3:
 
         #view user credentials
         with open('digicore.txt', 'r') as file:  #read the file in text file
-            for line in file:
+            try:
+                for line in file:
                     name,encrypted_password,url = line.strip().split(',') #This code line reads a single line from the file, removes any extra spaces or newlines, splits the line into three parts based on commas,
                     decrypted = cip.decrypted_value(encrypted_password)
                     print(f'{name:<15} | {decrypted:<20} | {url:<30}')
+            except FileNotFoundError:
+                print(f'No stored data is found') #file doesnt exist
 
 
     selected_opt = menu()
